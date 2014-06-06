@@ -19,7 +19,7 @@ if __name__ == '__main__':
     rarm = moveit_commander.MoveGroupCommander("right_arm")
     larm = moveit_commander.MoveGroupCommander("left_arm")
     
-    print "=" * 15 + " Right arm" + "=" * 15
+    print "=" * 15 + " Right arm " + "=" * 15
     print "=" * 10 + " Reference frame: %s" % rarm.get_planning_frame()
     
     print "=" * 10 + " Reference frame: %s" % rarm.get_end_effector_link()
@@ -43,7 +43,7 @@ if __name__ == '__main__':
     rarm.go()
     rospy.sleep(1)
 
-    print "=" * 15 + " Left arm" + "=" * 15
+    print "=" * 15 + " Left arm " + "=" * 15
     print "=" * 10 + " Reference frame: %s" % larm.get_planning_frame()
     print "=" * 10 + " Reference frame: %s" % larm.get_end_effector_link()
 
@@ -67,7 +67,24 @@ if __name__ == '__main__':
     larm.go()
     rospy.sleep(1)
     
-    print "=" * 20
+    print "=" * 10 + " Planning to a joint-space goal"
+    rarm.clear_pose_targets()
+
+    print "=" * 10 + " Joint values: ", rarm.get_current_joint_values()
+    
+    rarm_variable_values = [
+        1.4377544509919726, 
+        -1.3161643133168621, 
+        -2.126307271452489, 
+        1.4335761224859305, 
+        0.02359653211486051, 
+        0.55989121526186
+    ]
+    
+    print "=" * 10 + " Moving to a joint-space goal"
+    rarm.set_joint_value_target(rarm_variable_values)
+    rarm.go()
+    rospy.sleep(1)
 
     print "=" * 10 + " Moving to an initial pose"
     rarm.set_pose_target(rarm_initial_pose)
@@ -75,4 +92,4 @@ if __name__ == '__main__':
     rarm.go()
     larm.go()
     rospy.sleep(2)
-    
+
