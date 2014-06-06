@@ -5,8 +5,8 @@ import rospy
 import geometry_msgs.msg
 import copy
 
-if __name__ == '__main__':
-    rospy.init_node("planning_execution")
+def main():
+    rospy.init_node("moveit_command_sender")
 
     robot = moveit_commander.RobotCommander()
     
@@ -116,4 +116,10 @@ if __name__ == '__main__':
     rarm.go()
     larm.go()
     rospy.sleep(2)
+
+if __name__ == '__main__':
+    try:
+        main()
+    except rospy.ROSInterruptException:
+        pass
 
