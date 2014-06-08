@@ -1,5 +1,14 @@
 #!/usr/bin/env python
 
+#############################################################################################
+ # Copyright (c) 2014 Daiki Maekawa and ROS JAPAN Users Group All Rights Reserved.         #
+ #                                                                                         #
+ # @file moveit_command_sender.py                                                          #
+ # @brief This program will run you through using python interface to the move_group node. #
+ # @author Daiki Maekawa                                                                   #
+ # @date 2014-06-08                                                                        #
+#############################################################################################
+
 import moveit_commander
 import rospy
 import geometry_msgs.msg
