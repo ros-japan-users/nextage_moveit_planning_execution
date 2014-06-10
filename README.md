@@ -8,6 +8,8 @@ $ sudo aptitude update
 $ sudo aptitude install ros-%ROS_DISTRO%-rtmros-nextage ros-%ROS_DISTRO%-moveit-ros-visualization ros-%ROS_DISTRO%-moveit-planners-ompl
 ```
 
+
+https://github.com/tork-a/rtmros_nextage/issues/67
 ```console
 $ sudo aptitude ros-%ROS_DISTRO%-hironx-moveit-config 
 ```
