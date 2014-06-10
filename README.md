@@ -3,20 +3,20 @@ nextage_moveit_planning_execution
 
 ## Install the dependency packages
 
-~~~sh
+```sh
 $ sudo aptitude update
 $ sudo aptitude install ros-%ROS_DISTRO%-rtmros-nextage ros-%ROS_DISTRO%-moveit-ros-visualization ros-%ROS_DISTRO%-moveit-planners-ompl
-~~~
+```
 
 
 https://github.com/tork-a/rtmros_nextage/issues/67
-```console
+```sh
 $ sudo aptitude ros-%ROS_DISTRO%-hironx-moveit-config 
 ```
 
 ## Usage
 
-```console
+```sh
 $ rtmlaunch nextage_ros_bridge nextage_ros_bridge_simulation.launch
 $ roslaunch nextage_moveit_planning_execution planning_execution.launch
 $ rosrun nextage_moveit_planning_execution moveit_command_sender.py
