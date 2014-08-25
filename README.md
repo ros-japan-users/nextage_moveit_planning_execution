@@ -26,6 +26,6 @@ $ rosrun nextage_moveit_planning_execution moveit_command_sender.py
 
 ## License
 
-Copyright (c) 2014, Daiki Maekawa. (MIT License)
+Copyright (c) 2014, [Daiki Maekawa](http://daikimaekawa.strikingly.com/). (MIT License)
 
 See LICENSE for more info.
