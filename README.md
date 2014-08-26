@@ -4,14 +4,7 @@ nextage_moveit_planning_execution
 ## Install the dependency packages
 
 ```sh
-$ sudo aptitude update
-$ sudo aptitude install ros-%ROS_DISTRO%-rtmros-nextage ros-%ROS_DISTRO%-moveit-ros-visualization ros-%ROS_DISTRO%-moveit-planners-ompl
-```
-
-
-https://github.com/tork-a/rtmros_nextage/issues/67
-```sh
-$ sudo aptitude ros-%ROS_DISTRO%-hironx-moveit-config 
+$ rosdep install nextage_moveit_planning_execution
 ```
 
 ## Usage
