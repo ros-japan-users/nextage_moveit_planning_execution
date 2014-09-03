@@ -15,12 +15,20 @@ import sys, select, termios, tty
 
 class TeleopNextage:
     MOVE_BINDINGS = {
-        'h' : (1, 1),
-        'j' : (0, -1),
-        'k' : (0, 1),
-        'l' : (1, -1),
+        'h' : (1, 0.1),
+        'j' : (0, -0.1),
+        'k' : (0, 0.1),
+        'l' : (1, -0.1),
     }
 
+    MSG = """
+        **********
+        h : y += 0.1
+        j : x += -0.1
+        k : x += 0.1
+        l : y += -0.1
+        **********
+    """
     
     def __init__(self):
         self._settings = termios.tcgetattr(sys.stdin)
@@ -67,6 +75,9 @@ class TeleopNextage:
 def main():
     rospy.init_node('teleop_pose_key')
     teleop_nextage = TeleopNextage()
+    
+    print TeleopNextage.MSG
+    
     teleop_nextage.run()
 
 if __name__ == "__main__":
