@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="load_robot_description" default="false"/>
+  <param if="$(arg load_robot_description)" name="robot_description" textfile="$(find nextage_description)/urdf/NextageOpen.urdf"/>
+
+  <param name="robot_description_semantic" textfile="$(find nextage_moveit_config)/config/NextageOpen.srdf"/>
+  <group ns="robot_description_planning">
+    <rosparam command="load" file="$(find nextage_moveit_planning_execution)/config/joint_limit.yaml"/>
+  </group>
+
+</launch>
